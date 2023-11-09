@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Help Me Cook | Your Online Recipe Finder">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/script.js">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +16,13 @@
 
     <title>Help Me Cook</title>
 </head>
+
 <body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+    
+    </header>
 
 <div class="header-container">
     <header>
@@ -42,17 +47,36 @@
         </nav>
     </header>
 </div>
+          
+    <div>
+        <h1>Help Me Cook</h1>
+
+        <form>
+            <input class="recipe-input" type="text" placeholder="Search for a recipe" autofocus>
+            <button class="search" type="button">SEARCH</button>
+            <span class="msg"></span>
+        </form>
+    </div>
+
 
 <div class="search-results">
     <p>Search results</p>
 </div>
 
+
     
 </body>
 <footer>
 
-    <p>Copyright 2023 | Bootcamp Students Project</p>
+    <div class="searchResults"></div>
+    <footer>
 
-</footer>
+        <p>Copyright 2023 | Bootcamp Students Project</p>
 
-</html>
+
+    </footer>
+    <script src ="script.js"></script>
+</body >
+
+
+</html >
