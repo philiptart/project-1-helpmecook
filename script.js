@@ -15,3 +15,16 @@ var getRecipeData = function () {
         console.log(data)
     })
 } 
+
+var getYoutubeData = function() {
+    var youtubeURL = ""
+    
+    fetch(youtubeURL)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+    })
+}
+searchButton.addEventListener("click", getRecipeData);
