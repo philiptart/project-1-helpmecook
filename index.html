@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Help Me Cook | Your Online Recipe Finder">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,60 +23,94 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">
+            <div class="logo"></div>
     
     </header>
 
     <div>
         <h1>Help Me Cook</h1>
+        <p>Your Online Recipe Finder</p>
+      
 
         <form>
-            <input class="recipe-input" type="text" placeholder="Search for a recipe" autofocus>
-            <button class="search" type="button">SEARCH</button>
+            <input class="recipe-search" type="text" placeholder="Search for a recipe" autofocus>
+            <button class="search-button" type="button">SEARCH</button>
             <span class="msg"></span>
         </form>
     </div>
 <div class="header-container">
-    <header>
-        <div class="logo">
-            <img src="path_to_your_logo_image" alt="Help Me Cook Logo">
-        </div>
-
-        <h1>Help Me Cook</h1>
-        <p>Your Online Recipe Finder</p>
+        
+            <img src="path_to_your_logo_image" alt="Help Me Cook Logo"> -->
+        <!-- </div>
 
         <nav>
-            <div class="search-container">
-                <input type="text" id="recipe-search" placeholder="Search for recipe">
-                <button type="submit">Submit</button>
-            </div>
 
             <div class="filter-container">
                 <input type="text" id="filter-ingredient" placeholder="Filter by Ingredient">
                 <input type="text" id="filter-meal" placeholder="Filter by Meal">
-                <button type="submit">Filter</button>
+                <button type="submit" id="filter-button">Filter</button>
             </div>
         </nav>
-    </header>
-</div>
+
 
 <div class="search-results">
     <p>Search results</p>
 </div>
 
-
-    <div class="searchResults"></div>
-    <footer>
-    
-</body>
 <footer>
 
         <p>Copyright 2023 | Bootcamp Students Project</p>
 
 
-    </footer>
+</footer>
     <script src ="script.js"></script>
 </body >
 
 
-</html >
+</html > -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Help Me Cook | Your Online Recipe Finder">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <title>Help Me Cook</title>
+</head>
+<body>
+
+    <header class="header-container">
+        <div class="logo"></div>
+    </header>
+            <!-- <img src="path_to_your_logo_image" alt="Help Me Cook Logo"> -->
+        
+        <h1>Help Me Cook</h1>
+        <p>Your Online Recipe Finder</p>
+        
+            <form class="search-container">
+                <input type="text" id="recipe-search" placeholder="Search for recipe">
+                <button type="submit" id="submitBtn">SEARCH</button>
+            </form>
+            <div class="filter-container">
+                <input type="text" id="filter-ingredient" placeholder="Filter by Ingredient">
+                <input type="text" id="filter-meal" placeholder="Filter by Meal">
+                <button type="submit" id="filterBtn">Filter</button>
+            </div>
+        
+
+<div class="search-results" id="searchResults">
+    <p>Search results</p>
+</div>
+<footer>
+    <p>Copyright 2023 | Bootcamp Student Project</p>
+</footer>
+<script src ="script.js"></script>
+</body>
+</html>
