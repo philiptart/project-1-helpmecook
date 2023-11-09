@@ -1,7 +1,7 @@
 var EdamamAPIKey = "df04c0c3e6mshe64ccb6aa49f000p1ae751jsn3e242baa2eed"
-var recipeInput = document.querySelector(".recipe-input");
-var searchButton = document.querySelector(".search");
-
+var recipeInput = document.getElementById("recipe-search");
+var searchButton = document.getElementById("submitBtn");
+console.log("hi")
 const url = 'https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2?type=public&q=chicken';
 const options = {
 	method: 'GET',
@@ -12,9 +12,9 @@ const options = {
 	}
 };
 
-var getRecipeData = function () {
+var getRecipeData = function (event) {
     var recipeName = recipeInput.value.trim(); //Gets entered recipe name and trims any whitespace
-   
+   event.preventDefault()
     fetch(url,options)
     .then(function(response){
         return response.json();
