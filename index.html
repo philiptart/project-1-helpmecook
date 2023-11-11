@@ -1,76 +1,6 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Help Me Cook | Your Online Recipe Finder">
-    <link rel="stylesheet" href="./style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-
-
-    <title>Help Me Cook</title>
-</head>
-<body>
-
-
-
-<body>
-    <header>
-        <div class="header-container">
-            <div class="logo"></div>
-    
-    </header>
-
-    <div>
-        <h1>Help Me Cook</h1>
-        <p>Your Online Recipe Finder</p>
-      
-
-        <form>
-            <input class="recipe-search" type="text" placeholder="Search for a recipe" autofocus>
-            <button class="search-button" type="button">SEARCH</button>
-            <span class="msg"></span>
-        </form>
-    </div>
-<div class="header-container">
-        
-            <img src="path_to_your_logo_image" alt="Help Me Cook Logo"> -->
-        <!-- </div>
-
-        <nav>
-
-            <div class="filter-container">
-                <input type="text" id="filter-ingredient" placeholder="Filter by Ingredient">
-                <input type="text" id="filter-meal" placeholder="Filter by Meal">
-                <button type="submit" id="filter-button">Filter</button>
-            </div>
-        </nav>
-
-
-<div class="search-results">
-    <p>Search results</p>
-</div>
-
-<footer>
-
-        <p>Copyright 2023 | Bootcamp Students Project</p>
-
-
-</footer>
-    <script src ="script.js"></script>
-</body >
-
-
-</html > -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,33 +14,37 @@
         rel="stylesheet">
     <title>Help Me Cook</title>
 </head>
+
 <body>
 
     <header class="header-container">
         <div class="logo"></div>
     </header>
-            <!-- <img src="path_to_your_logo_image" alt="Help Me Cook Logo"> -->
-        
+    <!-- <img src="path_to_your_logo_image" alt="Help Me Cook Logo"> -->
+    <main>
         <h1>Help Me Cook</h1>
         <p>Your Online Recipe Finder</p>
-        
-            <form class="search-container">
-                <input type="text" id="recipe-search" placeholder="Search for recipe">
-                <button type="submit" id="submitBtn">SEARCH</button>
-            </form>
-            <div class="filter-container">
-                <input type="text" id="filter-ingredient" placeholder="Filter by Ingredient">
-                <input type="text" id="filter-meal" placeholder="Filter by Meal">
-                <button type="submit" id="filterBtn">Filter</button>
-            </div>
-        
 
-<div class="search-results" id="searchResults">
-    <p>Search results</p>
-</div>
-<footer>
-    <p>Copyright 2023 | Bootcamp Student Project</p>
-</footer>
-<script src ="script.js"></script>
+        <form class="search-container">
+            <input type="text" id="recipe-search" placeholder="Search for recipe">
+            <button type="submit" id="submitBtn">SEARCH</button>
+        </form>
+        <div class="filter-container">
+            <input type="text" id="filter-ingredient" placeholder="Filter by Ingredient">
+            <input type="text" id="filter-meal" placeholder="Filter by Meal">
+            <button type="submit" id="filterBtn">Filter</button>
+        </div>
+
+
+        <div class="search-results" id="searchResults">
+            <h2>Search results</h2>
+            <div class="results" style="border:1px solid black; display: flex; flex-wrap:wrap"></div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright 2023 | Bootcamp Student Project</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
