@@ -15,10 +15,13 @@
 // } catch (error) {
 // 	console.error(error);
 // }
-var EdamamAPIKey = "df04c0c3e6mshe64ccb6aa49f000p1ae751jsn3e242baa2eed"
+var EdamamAPIKey = "df04c0c3e6mshe64ccb6aa49f000p1ae751jsn3e242baa2eed";
 var recipeInput = document.getElementById("recipe-search");
 var searchButton = document.getElementById("submitBtn");
-console.log("hi")
+var filterIngredientInput = document.getElementById("filter-ingredient");
+var filterMealSelect = document.getElementById("filter-meal");
+var filterButton = document.getElementById("filterBtn");
+console.log("hi");
 
 const options = {
 	method: 'GET',
@@ -29,36 +32,65 @@ const options = {
 	}
 }; // get input to display on UI
 
-var getRecipeData = function (event) {
-    var recipeName = recipeInput.value.trim(); //Gets entered recipe name and trims any whitespace
-    console.log(recipeName)
-    const url = 'https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2?type=public&field%5B0%5D=uri&q='+recipeName+'&beta=true&random=true&cuisineType%5B0%5D=American&imageSize%5B0%5D=LARGE&mealType%5B0%5D=Breakfast&health%5B0%5D=alcohol-cocktail&diet%5B0%5D=balanced&dishType%5B0%5D=Biscuits%20and%20cookies';
-   event.preventDefault()
-    fetch(url,options)
-    .then(function(response){
-        return response.json();
+function getSelectedMealFilter() {
+    return filterMealSelect.value;
+}
 
-    })
-    .then(function (data){
-        var {hits} = data //go to hits line- destructuring 
-        console.log(hits)
-for (var i=0; i<hits.length; i++){
+function getIngredientFilter() {
+    return filterIngredientInput.value.trim();
+}
+
+var getRecipeData = function (event) {
+    event.preventDefault();
+
+    var recipeName = recipeInput.value.trim(); //Gets entered recipe name and trims any whitespace
+    var ingredientFilter = getIngredientFilter();
+    var selectedMeal = getSelectedMealFilter();
+    console.log(recipeName);
+    console.log(selectedMeal);
+    console.log(ingredientFilter);
+
+    var url = `https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2?type=public&q=${recipeName}&beta=true`;
+
+    if (selectedMeal) {
+        url += `&mealType=${selectedMeal}`;
+    }
+
+    if (ingredientFilter) {
+        url += `&ingredients=${ingredientFilter}`;
+    }
+    
+    
+
+    var resultsContainer = document.querySelector(".results");
+    resultsContainer.innerHTML = '';
+
+    fetch(url, options)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            var { hits } = data;
+            console.log(hits)
+            for (var i = 0; i <hits.length; i++) {
     console.log(hits[i])
-    var card = document.createElement("div")
-    card.setAttribute("class", "card")
+    var card = document.createElement("div");
+    card.setAttribute("class", "card");
     var image = document.createElement("img");
-    image.setAttribute("src", hits[i].recipe.images.SMALL.url)
-    card.append(image)
+    image.setAttribute("src", hits[i].recipe.images.SMALL.url);
+    card.append(image);
     var aTag = document.createElement("a");
     aTag.setAttribute("href", hits[i]._links.self.href);
-    aTag.setAttribute("target", "_blank")
-    var title = document.createElement("h3").textContent= " "+ hits[i].recipe.label + " "
-    aTag.append(title)
-    card.append(aTag)
-    document.querySelector(".results").append(card)
+    aTag.setAttribute("target", "_blank");
+    var title = document.createElement("h3").textContent= " " + hits[i].recipe.label + " ";
+    aTag.append(title);
+    card.append(aTag);
+    resultsContainer.appendChild(card);
 }
-    })
-} 
+})
+};
+
+
 
 var getYoutubeData = function() {
     var youtubeURL = ""
@@ -71,4 +103,7 @@ var getYoutubeData = function() {
         console.log(data)
     })
 }
+
+
 searchButton.addEventListener("click", getRecipeData);
+filterButton.addEventListener("click", getRecipeData);
