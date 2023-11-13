@@ -73,19 +73,27 @@ var getRecipeData = function (event) {
             var { hits } = data;
             console.log(hits)
             for (var i = 0; i <hits.length; i++) {
-    console.log(hits[i])
-    var card = document.createElement("div");
-    card.setAttribute("class", "card");
-    var image = document.createElement("img");
-    image.setAttribute("src", hits[i].recipe.images.SMALL.url);
-    card.append(image);
-    var aTag = document.createElement("a");
-    aTag.setAttribute("href", hits[i]._links.self.href);
-    aTag.setAttribute("target", "_blank");
-    var title = document.createElement("h3").textContent= " " + hits[i].recipe.label + " ";
-    aTag.append(title);
-    card.append(aTag);
-    resultsContainer.appendChild(card);
+                console.log(hits[i])
+
+                var card = document.createElement("div");
+                card.setAttribute("class", "card");
+
+                var image = document.createElement("img");
+                image.setAttribute("src", hits[i].recipe.images.SMALL.url);
+                card.appendChild(image);
+
+                var title = document.createElement("h3");
+                title.textContent = " " + hits[i].recipe.label + " ";
+                card.appendChild(title);
+                
+                var link = document.createElement("a");
+                link.setAttribute("href", hits[i].recipe.url);
+                link.setAttribute("target", "_blank");
+                link.textContent = "View Recipe";
+                
+                card.appendChild(link);
+                
+                resultsContainer.appendChild(card);
 }
 })
 };
