@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Help Me Cook | Your Online Recipe Finder">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,40 +15,53 @@
     <title>Help Me Cook</title>
 </head>
 
-<body>
+<body class="bg-zinc-100 font-serif font-normal">
 
-    <header class="header-container">
-        <div class="logo"></div>
+    <header class="header-container flex-col flex xl:flex-row lg:flex-row md:flex-col sm:flex-col">
+
+        <div class="logo flex justify-center items-center lg:flex justify-center items-center md:flex justify-center items-center sm:flex justify-center items-center ">
+            <img class="sm:h-auto max-w-xs sm:h-auto max-w-sm md:h-auto max-w-md lg:h-auto max-w-md xl:h-auto max-w-md" src="../assets/app-logo.png" alt="Help Me Cook Logo">
+        </div>
+
+        <section class="searchFunctions xl:grow lg:grow">
+
+            <h2 class= "text-xl text-center mt-1 lg:grow pt-24 text-4xl text-center font-semibold mb-16">Your Online Recipe Finder</h2>
+
+            <form class="search-container flex flex-wrap justify-center">
+                <input type="text" class="text-xl bg-neutral-50 text-center px-4 py-4 w-64 h-16 rounded drop-shadow-lg" id="recipe-search" placeholder="Search for recipe">
+                <button type="submit" class="btn-search text-xl bg-neutral-50 text-orange-500 text-center px-4 py-4 w-48 h-16 rounded font-medium drop-shadow-lg mt-4 sm:mt-0 ml-4 md:mt-0" id="submitBtn">Search</button>
+            </form>
+
+            <div class="filter-container text-xl flex flex-wrap justify-center">
+                <input type="text" class="text-neutral-700 text-center bg-neutral-50 px-4 py-4 rounded font-medium drop-shadow-lg mt-4" id="filter-ingredient" placeholder="Filter by Ingredient">
+                <select class="bg-neutral-50 text-orange-500 text-center px-4 py-4 ml-4 rounded font-medium drop-shadow-lg mt-4" id="filter-meal">
+                    <option value="">Select a Meal</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+                <button class="ml-4" type="submit" id="filterBtn">Filter</button>
+            </div>
+
+        </section>
+        
     </header>
-    <!-- <img src="path_to_your_logo_image" alt="Help Me Cook Logo"> -->
+
     <main>
-        <h1>Help Me Cook</h1>
-        <p>Your Online Recipe Finder</p>
+        
+        <section class="search-results text-xl bg-neutral-50 px-16 mt-16" id="searchResults">
 
-        <form class="search-container">
-            <input type="text" id="recipe-search" placeholder="Search for recipe">
-            <button type="submit" id="submitBtn">SEARCH</button>
-        </form>
-        <div class="filter-container">
-            <input type="text" id="filter-ingredient" placeholder="Filter by Ingredient">
-            <select id="filter-meal">
-                <option value="">Select a Meal</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-            </select>
-            <button type="submit" id="filterBtn">Filter</button>
-        </div>
+            <h2 class="text-xl bg-neutral-50 text-center mt-8 mb-8">Search results</h2>
+            <div class="results"></div>
 
+        </section>
 
-        <div class="search-results" id="searchResults">
-            <h2>Search results</h2>
-            <div class="results" style="border:1px solid black; display: flex; flex-wrap:wrap"></div>
-        </div>
     </main>
-    <footer>
-        <p>Copyright 2023 | Bootcamp Student Project</p>
+
+    <footer class="flex justify-center wrap border-slate-900 text-xl pt-4 text-center border-t-2 border-solid sm: text-base text-center md: text-base text-center">
+        <p class="text-slate-500 text-base px-4">Copyright 2023 | Bootcamp Student Project</p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 
