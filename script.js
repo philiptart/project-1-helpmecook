@@ -67,7 +67,7 @@ function getRecipeData(event) {
     
     
 
-    var resultsContainer = document.querySelector("section .results");
+    var resultsContainer = document.querySelector(".results");
     resultsContainer.innerHTML = '';
 
     fetch(url, options)
@@ -88,10 +88,12 @@ function getRecipeData(event) {
                 card.appendChild(image);
 
                 var title = document.createElement("h3");
+                title.setAttribute("class", "card-h3");
                 title.textContent = " " + hits[i].recipe.label + " ";
                 card.appendChild(title);
                 
                 var link = document.createElement("a");
+                link.setAttribute("class", "card-a");
                 link.setAttribute("href", hits[i].recipe.url);
                 link.setAttribute("target", "_blank");
                 link.textContent = "View Recipe";
@@ -101,7 +103,9 @@ function getRecipeData(event) {
                 var recipeNameForSearch = encodeURIComponent(hits[i].recipe.label);
                 serpApiLink.setAttribute("href", `https://serpapi.com/search.html?engine=youtube&search_query=${recipeNameForSearch}&api_key=${SerpApiKey}`);
                 serpApiLink.setAttribute("target", "_blank");
+                serpApiLink.setAttribute("class", "card-y");
                 serpApiLink.textContent = "Search on YouTube";
+                
                 card.appendChild(serpApiLink);
 
                 resultsContainer.appendChild(card);

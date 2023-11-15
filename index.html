@@ -20,12 +20,12 @@
     <header class="header-container flex-col flex xl:flex-row lg:flex-row md:flex-col sm:flex-col">
 
         <div class="logo flex justify-center items-center lg:flex justify-center items-center md:flex justify-center items-center sm:flex justify-center items-center ">
-            <img class="sm:h-auto max-w-xs sm:h-auto max-w-sm md:h-auto max-w-md lg:h-auto max-w-md xl:h-auto max-w-md" src="../assets/app-logo.png" alt="Help Me Cook Logo">
+            <img class="sm:h-auto max-w-xs sm:h-auto max-w-sm md:h-auto max-w-md lg:h-auto max-w-md xl:h-auto max-w-md" src="./assets/app-logo.png" alt="Help Me Cook Logo">
         </div>
 
         <section class="searchFunctions xl:grow lg:grow">
 
-            <h2 class= "text-xl text-center mt-1 lg:grow pt-24 text-4xl text-center font-semibold mb-16">Your Online Recipe Finder</h2>
+            <h2 class= "text-3xl text-center mt-1 lg:grow pt-24 text-center font-semibold mb-16">Your Online Recipe Finder</h2>
 
             <form class="search-container flex flex-wrap justify-center">
                 <input type="text" class="text-xl bg-neutral-50 text-center px-4 py-4 w-64 h-16 rounded drop-shadow-lg" id="recipe-search" placeholder="Search for recipe">
@@ -40,7 +40,7 @@
                     <option value="lunch">Lunch</option>
                     <option value="dinner">Dinner</option>
                 </select>
-                <button class="ml-4" type="submit" id="filterBtn">Filter</button>
+                <button class="ext-xl bg-neutral-50 text-orange-500 text-center px-4 py-4 w-32 h-16 rounded font-medium drop-shadow-lg mt-4 ml-4" type="submit" id="filterBtn">Filter</button>
             </div>
 
         </section>
@@ -51,15 +51,15 @@
         
         <section class="search-results text-xl bg-neutral-50 px-16 mt-16" id="searchResults">
 
-            <h2 class="text-xl bg-neutral-50 text-center mt-8 mb-8">Search results</h2>
+            <h2 class="text-xl bg-neutral-50 text-center pt-8 mb-8">Search Results</h2>
             <div class="results"></div>
 
         </section>
 
     </main>
 
-    <footer class="flex justify-center wrap border-slate-900 text-xl pt-4 text-center border-t-2 border-solid sm: text-base text-center md: text-base text-center">
-        <p class="text-slate-500 text-base px-4">Copyright 2023 | Bootcamp Student Project</p>
+    <footer class="flex justify-center wrap border-slate-900 text-xl pt-4 pb-4 text-center border-t-1 border-solid sm:text-base text-center md:text-base text-center">
+        <p class="text-slate-500 text-base px-1">Copyright 2023 |</p><a class="text-slate-500 text-base" href="https://github.com/philiptart/project-1-helpmecook">Bootcamp Student Project</a> 
     </footer>
     
     <script src="script.js"></script>
