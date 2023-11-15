@@ -67,7 +67,7 @@ function getRecipeData(event) {
     
     
 
-    var resultsContainer = document.querySelector("section .results");
+    var resultsContainer = document.querySelector(".results");
     resultsContainer.innerHTML = '';
 
     fetch(url, options)
