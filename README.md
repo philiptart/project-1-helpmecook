@@ -4,7 +4,7 @@ Help Me Cook is a straightforward web application designed to assist users in di
 
 ![Screenshot of Help Me Cook](/assets/Screenshot.png)
 
-[Visit Help Me Cook](https:// our website here when go live/)
+[Visit Help Me Cook](https://https://philiptart.github.io/project-1-helpmecook/)
 
 ## Table of Contents
 
