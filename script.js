@@ -15,6 +15,13 @@
 // } catch (error) {
 // 	console.error(error);
 // }
+var basicArray = ["chicken", "beef", "fish"]
+var userArray = JSON.parse(localStorage.getItem("recipeData"))||[]
+var recipeHistory = []
+if(userArray.length > 0){
+    recipeHistory=basicArray.concat(userArray)
+}
+console.log(recipeHistory)
 var EdamamAPIKey = "df04c0c3e6mshe64ccb6aa49f000p1ae751jsn3e242baa2eed";
 var SerpApiKey = "69a9a9cad5efc659aa413039b114f385fedcaef4e88b4c9b3a21016db0a57e49";
 var recipeInput = document.getElementById("recipe-search");
@@ -109,11 +116,38 @@ function getRecipeData(event) {
                 card.appendChild(serpApiLink);
 
                 resultsContainer.appendChild(card);
+                if (!userArray.includes(recipeName)){
+                    userArray.push(recipeName)
+                    localStorage.setItem("recipeData", JSON.stringify(userArray));
+                }
 }
 })
 };
 
 
+function loadAutocomplete() {
+var recipe = [
+    "Chicken",
+    "Beef",
+    "Fish",
+    "Lasagna",
+    "Egg",
+    "Pork",
+    "Seafood",
+    "lamb",
+    "apple",
+    "turkey",
+    "dumpling",
+    "carrot",
+    "broccoli",
+    "rice"
+];
+$("#recipe-search").autocomplete({
+source: recipe
+});
+
+}
+loadAutocomplete();
 
 // const { getJson } = require("serpapi");
 // getJson({
